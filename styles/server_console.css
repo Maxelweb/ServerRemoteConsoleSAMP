@@ -1,0 +1,53 @@
+
+/*
+	
+	SERVER REMOTE CONSOLE
+	style file
+	developed by Maxel (marianosciacco.it)
+*/
+
+
+body{ 
+	background-color: #343a40; 
+} 
+
+.main_container{
+	width: 940px; 
+	margin: 50px auto; 
+	padding: 30px; 
+	background-color: white; 
+	box-shadow: 3px 8px 24px #000;
+}
+
+.page{ 
+	background-color: #FFF; 
+	padding: 20px 0; 
+} 
+a { 
+	color: #444; 
+	text-decoration: none; 
+} 
+
+a:hover{ 
+	color: #999;
+} 
+
+td,th{ 
+	border-bottom: 1px solid #CCC; 
+	padding: 4px 6px; 
+} 
+
+tr:nth-child(odd){ 
+	background-color: #F1F1F1; 
+} 
+
+table{
+	border-collapse: collapse; 
+} 
+
+th{
+	background-color: #999; 
+	color: white; 
+	text-align: left; 
+	text-shadow: 1px 1px 1px #000;
+}
