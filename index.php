@@ -2,7 +2,7 @@
 
 /*
 	SERVER REMOTE CONSOLE
-	MADE BY Maxel (marianosciacco.it)
+	Developed by Maxel (marianosciacco.it)
 
 	Useful Libs:
 
@@ -30,6 +30,7 @@
 	session_start();
 
 	require('includes/configuration.php');
+	require('includes/environment.php');
 	require('includes/functions.php');
 
 
@@ -52,6 +53,11 @@
 	}
 	elseif((isset($_SESSION['src_logged']) && $CONFIG['EnableSRCPassword']) || !$CONFIG['EnableSRCPassword']) 
 	{
+
+		if(isset($_GET['updates']))
+		{
+			require("controllers/updates.ctrl.php");
+		}
 
 		$server = new SampQuery(IP_SERVER, PORT_SERVER);
 	    $status = ($server->connect()) ? 1 : 0;

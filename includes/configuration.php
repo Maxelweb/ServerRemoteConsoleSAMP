@@ -44,7 +44,7 @@
 
 	
 
-	define(SRC_PASSWORD, "getsomecoffee"); // Insert ServerConsole password
+	define(SRC_PASSWORD, "getmesomecoffee"); // Insert ServerConsole password
 	define(IP_SERVER, "127.0.0.1"); // Insert server IP
 	define(PORT_SERVER, "7777"); // Insert server port (DEFAULT: 7777)
 	define(RCON_SERVER, "changeme"); // Insert RCON password
@@ -56,16 +56,6 @@
 
 
 
-
-
-
-	// ====== DO NOT CHANGE AFTER THIS LINE =====
-
-	$a = (isset($_GET['a'])) ? $_GET['a'] : "";
-	$id = (isset($_GET['id'])) ? (int)$_GET['id'] : 0;
-	$session = (isset($_SESSION['src_logged'])) ? 1 : 0;
-	$version = "1.0-beta";
-	// $TITLE = "SA-MP Server"; // Change this with your sa-mp server name
 
 ?>
 
