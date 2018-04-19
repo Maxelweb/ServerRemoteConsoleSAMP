@@ -34,6 +34,15 @@
 				$query->close(); 
 				Ok("Server stopped!");
 			}  	
+			elseif($_POST['restart'] && $CONFIG['EnableRCON'])
+			{
+				$query = new SampRcon(IP_SERVER, PORT_SERVER, RCON_SERVER); 
+				if(!$query->connect()) return "Connection error. Retry."; 
+				$query->call("say {FFFFFF} [SRC] The server is restarting. Please, consider to relog.", 1); 
+				$query->gmx(); 
+				$query->close(); 
+				Ok("Server restarted!");
+			}  	
 			elseif($_POST['viewlogs'] && $CONFIG['EnableSSH'])
 			{
 				Ok("Fetching server_logs...<br><br>");
@@ -84,7 +93,8 @@
 			$query = new SampRcon(IP_SERVER, PORT_SERVER, RCON_SERVER); 
 			if(!$query->connect()) return "Connection error. Retry."; 
 			$query->call("say {FFFFFF} [BAN-SRC] The player $name has been banned from the server.", 1);
-			$query->call("ban $id", 5);  
+			$query->call("ban $id", 5); 
+			$query->reloadBans(); 
 			$query->close();
 			Ok("The player <b>$name</b> has been banned successfully.");		
 		}					
@@ -122,26 +132,34 @@
 	                 <th>Score</th>
 	                 <th>Ping</th>";
 
-	            if($CONFIG['EnableRCON']) echo "<th>Options</th>";
+	            if($CONFIG['EnableRCON']) echo "<th>Options</th>"; 
 
 	            echo "
 	             </tr>
 	            ";
-	            foreach($query->getDetailedPlayers() as $arr)
-	            {
-	            	$id = 0; 
-	            	$name = ""; 
-	            	echo "<tr> ";
-	            	foreach($arr as $key => $value)
-	            	{
-	            		if($key == "playerid") $id = $value; 
-	            		if($key == "nickname") $name = $value; 
-	            		echo "<td>$value</td>"; 
-	            	}
+	            $players = $query->getDetailedPlayers();
+	            $fieldsnum = $CONFIG['EnableRCON'] ? 5 : 4;
 
-	            	if($CONFIG['EnableRCON']) echo "<td><a href='?a=kickPlayer&id=$id&name=$name' class='badge badge-warning'>Kick</a> <a href='?a=banPlayer&id=$id&name=$name' class='badge badge-danger'>Ban</a></td>";
-	            	echo "</tr>";
+	            if(!count($players))
+	            {
+	            	echo "<td colspan=$fieldsnum>The server is actually empty.</td>";
 	            }
+	            else
+		            foreach($players as $arr)
+		            {
+		            	$id = 0; 
+		            	$name = ""; 
+		            	echo "<tr> ";
+		            	foreach($arr as $key => $value)
+		            	{
+		            		if($key == "playerid") $id = $value; 
+		            		if($key == "nickname") $name = $value; 
+		            		echo "<td>$value</td>"; 
+		            	}
+
+		            	if($CONFIG['EnableRCON']) echo "<td><a href='?a=kickPlayer&id=$id&name=$name' class='badge badge-warning'>Kick</a> <a href='?a=banPlayer&id=$id&name=$name' class='badge badge-danger'>Ban</a></td>";
+		            	echo "</tr>";
+		            }
 	            echo "</table><br><br>";
 	            echo "<br><br>";
 

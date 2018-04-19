@@ -25,8 +25,9 @@
 	<?php } ?>
 
 	<form method='POST' action='?a=control'>
-		<a href='?a=info' class='btn btn-primary'><i class='fa fa-list-ul'></i> Informations and players list</a>
-		<?=$button;?>		
+		<a href='?a=info' class='btn btn-primary'><i class='fa fa-list-ul'></i> Informations and players</a>
+		<?php if($CONFIG['EnableRCON']) {?><button type="submit" name="restart" class='btn btn-warning' value="1"><i class='fa fa-redo-alt'></i> Restart</button><?php } ?>	
+		<?=$button;?>	
 		<?php if($CONFIG['EnableSSH']) {?>
 		<button type="submit" name="viewlogs" class='btn btn-default' value="1"><i class='fa fa-server'></i> View server logs</button> 
 		<button type="submit" name="resetlogs" class='btn btn-warning' value="1"><i class='fa fa-redo-alt'></i> Reset server logs</button>
