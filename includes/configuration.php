@@ -63,7 +63,7 @@
 
 	$a = (isset($_GET['a'])) ? $_GET['a'] : "";
 	$session = (isset($_SESSION['src_logged'])) ? 1 : 0;
-	$version = "1.0";
+	$version = "1.0-beta";
 	// $TITLE = "SA-MP Server"; // Change this with your sa-mp server name
 
 ?>
