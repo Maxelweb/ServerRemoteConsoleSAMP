@@ -34,14 +34,14 @@
 				$query->close(); 
 				Ok("Server stopped!");
 			}  	
-			elseif($_POST['restart'] && $CONFIG['EnableRCON'])
+			elseif($_POST['gmx'] && $CONFIG['EnableRCON'])
 			{
 				$query = new SampRcon(IP_SERVER, PORT_SERVER, RCON_SERVER); 
 				if(!$query->connect()) return "Connection error. Retry."; 
-				$query->call("say {FFFFFF} [SRC] The server is restarting. Please, consider to relog.", 1); 
+				$query->call("say {FFFFFF} [SRC] The server is changing mode. Please, consider to relog.", 1); 
 				$query->gmx(); 
 				$query->close(); 
-				Ok("Server restarted!");
+				Ok("Changing mode... done!");
 			}  	
 			elseif($_POST['viewlogs'] && $CONFIG['EnableSSH'])
 			{
@@ -161,7 +161,6 @@
 		            	echo "</tr>";
 		            }
 	            echo "</table><br><br>";
-	            echo "<br><br>";
 
 	        } 
 	        else 

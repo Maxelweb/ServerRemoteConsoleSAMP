@@ -44,14 +44,14 @@
 
 	
 
-	define(SRC_PASSWORD, "changeme"); // Insert ServerConsole password
+	define(SRC_PASSWORD, "getsomecoffee"); // Insert ServerConsole password
 	define(IP_SERVER, "127.0.0.1"); // Insert server IP
 	define(PORT_SERVER, "7777"); // Insert server port (DEFAULT: 7777)
-	define(RCON_SERVER, "samplercon"); // Insert RCON password
+	define(RCON_SERVER, "changeme"); // Insert RCON password
 
-	define(SERVER_SSH_USER, "samp"); // Insert your SSH user to login your VPS / Dedicated server
-	define(SERVER_SSH_PSW, "changepassword"); // Insert your SSH password to login your VPS / Dedicated server
-	define(SERVER_SSH_PATH, "path/to/samp-server/"); // Insert path to samp-server file
+	define(SERVER_SSH_USER, "user"); // Insert your SSH user to login your VPS / Dedicated server
+	define(SERVER_SSH_PSW, "sshpassword"); // Insert your SSH password to login your VPS / Dedicated server
+	define(SERVER_SSH_PATH, "path/to/samp03/"); // Insert path to samp-server file with final "/"
 
 
 
@@ -62,6 +62,7 @@
 	// ====== DO NOT CHANGE AFTER THIS LINE =====
 
 	$a = (isset($_GET['a'])) ? $_GET['a'] : "";
+	$id = (isset($_GET['id'])) ? (int)$_GET['id'] : 0;
 	$session = (isset($_SESSION['src_logged'])) ? 1 : 0;
 	$version = "1.0-beta";
 	// $TITLE = "SA-MP Server"; // Change this with your sa-mp server name

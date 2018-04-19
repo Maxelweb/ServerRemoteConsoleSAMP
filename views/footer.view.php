@@ -1,6 +1,4 @@
     <br>
-    <br>
-    <br>
     <p align="right">
         <small>
         	Developed by <b><a href="http://marianosciacco.it">Maxel</a></b> - <a href="https://github.com/Maxelweb/ServerRemoteConsoleSAMP">Server Remote Console <i class="fab fa-github"></i> </a> 

@@ -56,10 +56,7 @@
 		$server = new SampQuery(IP_SERVER, PORT_SERVER);
 	    $status = ($server->connect()) ? 1 : 0;
 	    $statusMessage = $status ? Ok("Online", 1) : No("Offline", 1);
-	    $button = !$status ? (($CONFIG['EnableSSH']) ? 
-	    								"<button type='submit' name='start' value=1 class='btn btn-success'><i class='fa fa-play'></i> Start Server</button>" : "")
-	    				   : (($CONFIG['EnableRCON']) ? 
-	    				   				"<button type='submit' name='stop' value=1 class='btn btn-danger'><i class='fa fa-stop'></i> Stop Server</button>" : "");  
+	    
 
 	    require("views/tools.view.php");
 
