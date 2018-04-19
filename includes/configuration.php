@@ -26,7 +26,7 @@
 	 *
 	 *  EnableSRCPassword is used to enable / disable password protected area to this console.
 	   		[IMPORTANT] 
-	   			It is strongly recommended to use it only if BOTH EnableSSH and EnableRCON are disabled, because the entire console would be visible to guests.
+	   			It is strongly recommended to change it only if BOTH EnableSSH and EnableRCON are disabled, because the entire console would be visible to guests.
 	 *
 	 *
 	 *  ---------------------------------

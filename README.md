@@ -14,16 +14,16 @@ You can easily start & stop your server, once configured, and you can view serve
 - Possibility to send global message to ingame players (via RCON)
 - Direct access to server_logs.txt and quick reset (via SSH)
 - Advanced information panel about the server
-- Advanced player's list (with score, username, id and ping)
+- Advanced player's list (with score, username, id and ping) and kick/ban options (via RCON)
 - Bootstrap 4.0 coding and font-awesome icons
 
 
 ## Requirements
 
-1. Web server with PHP 7.0+ (it should work fine in PHP 5)
-2. [Recommended] SA-MP server on Ubuntu or Debian
-3. [Recommended] RCON password of the server
-4. [Recommended] SSH access to samp-server directory with granted privileges 
+1. Web server with PHP 7.0+ (it should work fine in PHP 5 and in earlier versions)
+2. **[Recommended]** SA-MP server on Ubuntu or Debian
+3. **[Recommended]** RCON password of the server
+4. **[Recommended]** SSH access to samp-server directory with granted privileges 
 
 
 ## Installation
@@ -32,20 +32,19 @@ The installation process is pretty easy: you need to edit the file ```includes/c
 
 Modes | Description | Requirements
 ---   | ---         | ---
-**Open Mode** | This mode is used to display only the server information and player's list. Guests are able to see this everything and nothing else. | (1)
-**Limited Mode** | In this mode, you need a password to access the area and you can only view server information and player's list. | (1)
-**Only RCON Mode** | Like the limited mode, but with the possibility to kick and ban players, stop server and send global messages. | (1) (3)
-**Only SSH Mode** | Like the limited mode, with the possibility to start the server, view and reset server_logs. | (1) (2) (4)
-**Complete Mode** | All the features. | (1) (2) (3) (4)
-
+**Open** | This mode is used to display only the server information and player's list. Guests are able to see everything. | (1)
+**Limited** | In this mode, you need a password to access the area and you can only view server information and player's list, once logged-in. | (1)
+**Only RCON** | Like the limited mode, but with the possibility to kick and ban players, stop server and send global messages. | (1) (3)
+**Only SSH** | Like the limited mode, with the possibility to start the server, view and reset server_logs. | (1) (2) (4)
+**Complete** | All the features available. | (1) (2) (3) (4)
 
 
 ## Configuration File
 
-The configuration file is very simple to change. Just read this chapter to understand the function of each line.
+The configuration file is very simple to change. Just read this chapter to understand the function of each parameter.
 
 
-There are 4 main flags where ```enabled = 1``` and ```disabled = 1```. 
+There are four main flags where ```enabled = 1``` and ```disabled = 1```. 
 
 - **ShowRCON** is a flag used to show the RCON password of the sa-mp server in the information area.
 	   	
@@ -63,8 +62,9 @@ There are 4 main flags where ```enabled = 1``` and ```disabled = 1```.
 
 - **EnableSRCPassword** is used to enable / disable password protected area for this console.
 
-> *[IMPORTANT] It is strongly recommended to use it only if BOTH EnableSSH and EnableRCON are disabled, because the entire console would be visible to guests.*
+> **[IMPORTANT]** It is strongly recommended to disable **EnableSRCPassword** __only__ if BOTH **EnableSSH** and **EnableRCON** are __disabled__, since the entire console would be visible to guests.
 
+---
 
 Then, there also seven more fields used to define core parameters:
 
@@ -82,4 +82,11 @@ Then, there also seven more fields used to define core parameters:
 > **Do not use ROOT credentials**.
 
 
+## Credits
 
+The server remote console for SA-MP has been developed and coded by **Maxel** (marianosciacco.it)
+It is actually released in **beta version 1.0**.
+This project has started in __19/04/2018__ and it is __still supported__. 
+
+Special thanks to __StatusRed__ aka __Edward McKnight__ for his plugin **SA-MP Query and RCON API for PHP** which is used in this project. 
+Bootstrap 4 and Font-Awesome.com has been also used to make the GUI of this website.

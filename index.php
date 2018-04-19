@@ -4,10 +4,9 @@
 	SERVER REMOTE CONSOLE
 	MADE BY Maxel (marianosciacco.it)
 
-	Useful Libs and Plugins used:
+	Useful Libs:
 
-			PLUGIN 			http://forum.sa-mp.com/showthread.php?t=552899
-			SA_MP API 		http://forum.sa-mp.com/showthread.php?t=355574
+		SA_MP API 		http://forum.sa-mp.com/showthread.php?t=355574
 
 */
 
