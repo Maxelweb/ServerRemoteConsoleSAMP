@@ -7,12 +7,12 @@
 	 * SERVER REMOTE CONSOLE 
 	 * ------------------------------------------------
 	 *  	
-	 *	EnableRCON activates the following features (YOU NEED THE RCON PASSWORD):
+	 *	EnableRCON activates the following features:
 	 		- Kick / Ban players
 	 		- Message
 	 		- Stop server
 	 *
-	 *  Requirement: YOU NEED SSH ACCESS WITH SA-MP FOLDER PERMISSIONS TO ENABLE THIS FEATURE		
+	 *  Requirement: YOU NEED THE RCON SERVER PASSWORD TO ENABLE THIS FEATURE	
 	 *	
 	 *  ---------------------------------
 	 *

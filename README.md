@@ -52,7 +52,7 @@ There are four main flags where ```enabled = 1``` and ```disabled = 1```.
 	- Kick / Ban players
 	- Message
 	- Stop server
- 		- *[Requirement] YOU NEED A SSH ACCESS WITH SA-MP FOLDER PERMISSIONS*		
+ 		- *[Requirement] YOU NEED THE RCON SERVER PASSWORD*		
 	 
 
 - **EnableSSH** activates the following features:
