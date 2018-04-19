@@ -36,7 +36,7 @@ Modes | Description | Requirements
 **Limited** | In this mode, you need a password to access the area and you can only view server information and player's list, once logged-in. | (1)
 **Only RCON** | Like the limited mode, but with the possibility to kick and ban players, stop server and send global messages. | (1) (3)
 **Only SSH** | Like the limited mode, with the possibility to start the server, view and reset server_logs. | (1) (2) (4)
-**Complete** | All the features available. | (1) (2) (3) (4)
+**Complete** | All features available. | (1) (2) (3) (4)
 
 
 ## Configuration File
