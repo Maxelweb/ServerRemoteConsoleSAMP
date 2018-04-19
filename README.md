@@ -20,10 +20,10 @@ You can easily start & stop your server, once configured, and you can view serve
 
 ## Requirements
 
-- 1) Web server with PHP 7.0+ (it should work fine in PHP 5)
-- 2) [Recommended] SA-MP server on Ubuntu or Debian
-- 3) [Recommended] RCON password of the server
-- 4) [Recommended] SSH access to samp-server directory with granted privileges 
+1. Web server with PHP 7.0+ (it should work fine in PHP 5)
+2. [Recommended] SA-MP server on Ubuntu or Debian
+3. [Recommended] RCON password of the server
+4. [Recommended] SSH access to samp-server directory with granted privileges 
 
 
 ## Installation
@@ -42,23 +42,41 @@ Modes | Description | Requirements
 
 ## Configuration File
 
+The configuration file is very simple to change. Just reed the following descriptions to understand what does each flag.
+There are 4 main flags where ```enabled = 1``` and ```disabled = 1```. 
+
+- **ShowRCON** is a flag used to show the RCON password of the sa-mp server.
 	   	
 - **EnableRCON** activates the following features:
 	- Kick / Ban players
 	- Message
 	- Stop server
- 	- [Requirement:] YOU NEED A SSH ACCESS WITH SA-MP FOLDER PERMISSIONS		
+ 		- *[Requirement] YOU NEED A SSH ACCESS WITH SA-MP FOLDER PERMISSIONS*		
 	 
 
 - **EnableSSH** activates the following features:
  	- View / Reset server logs
 	- Start server
-	- [Requirement:] YOU NEED SSH ACCESS WITH SA-MP FOLDER PERMISSIONS TO ENABLE THIS FEATURE		
+		- *[Requirement] YOU NEED SSH ACCESS WITH SA-MP FOLDER PERMISSIONS TO ENABLE THIS FEATURE*		
 
 - **EnableSRCPassword** is used to enable / disable password protected area for this console.
-   		[IMPORTANT] 
-   			It is strongly recommended to use it only if BOTH EnableSSH and EnableRCON are disabled, because it activates remote control to guests.
+   	- *[IMPORTANT] It is strongly recommended to use it only if BOTH EnableSSH and EnableRCON are disabled, because the entire console would be visible to guests.*
 
+
+Then, there also seven more fields used to define core parameters:
+
+- **SRC_PASSWORD** (Server Remote Console Password) is the password used for the protected area.
+- **IP_SERVER** is the IP of the target server
+- **PORT_SERVER** is the port of the target server (default sa-mp port: 7777)
+- **RCON_PASSWORD** is the RCON password used in the target server
+- **SERVER_SSH_USER** and **SERVER_SSH_PSW** are the user credentials to access via SSH the sa-mp folder
+- **SERVER_SSH_PATH** is the path of the sa-mp installation in the server. 
+
+> To localize the server Path, login with your SSH user credentials and move with ```cd``` through folders till you find the samp03 (or similar) folder. Do not forget to add a slash ( / ) at the end. 
+
+> User credentials must have permissions to start the server and open (```cat```) / remove (```rm```) files. 
+
+> **Do not use ROOT credentials**.
 
 
 

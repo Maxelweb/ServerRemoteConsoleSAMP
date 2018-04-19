@@ -26,8 +26,7 @@
 	 *
 	 *  EnableSRCPassword is used to enable / disable password protected area to this console.
 	   		[IMPORTANT] 
-	   			It is strongly recommended to use it only if BOTH EnableSSH and EnableRCON are disabled,
-	   			because it activates remote control to guests.
+	   			It is strongly recommended to use it only if BOTH EnableSSH and EnableRCON are disabled, because the entire console would be visible to guests.
 	 *
 	 *
 	 *  ---------------------------------
@@ -43,7 +42,7 @@
 				);
 
 
-	$TITLE = "SA-MP Server"; // Change this with your sa-mp server name
+	
 
 	define(SRC_PASSWORD, "changeme"); // Insert ServerConsole password
 	define(IP_SERVER, "127.0.0.1"); // Insert server IP
@@ -65,7 +64,7 @@
 	$a = (isset($_GET['a'])) ? $_GET['a'] : "";
 	$session = (isset($_SESSION['src_logged'])) ? 1 : 0;
 	$version = "1.0";
-
+	// $TITLE = "SA-MP Server"; // Change this with your sa-mp server name
 
 ?>
 
