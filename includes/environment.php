@@ -1,6 +1,12 @@
 <?php
 
-// ====== DO NOT CHANGE THIS FILE =====
+/*
+	DO NOT CHANGE!
+	---------------------
+	SERVER REMOTE CONSOLE
+	Environment variables
+	developed by Maxel (marianosciacco.it)
+*/
 
 	$a = (isset($_GET['a'])) ? $_GET['a'] : "";
 	$id = (isset($_GET['id'])) ? (int)$_GET['id'] : 0;
