@@ -3,9 +3,10 @@
 This web application wrote in PHP is a simple remote console to manage players and server activities.
 You can easily start & stop your server, once configured, and you can view server logs as well as server advanced informations and player's list. Moreover, it is possible to kick or ban players directely from the console and send global messages.
 
-## Features
-
 ![](https://i.imgur.com/tLE7aT1.png)
+
+
+## Features
 
 - Easy configuration
 - No mysql database needed
