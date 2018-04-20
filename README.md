@@ -5,12 +5,15 @@ You can easily start & stop your server, once configured, and you can view serve
 
 ## Features
 
+![](https://i.imgur.com/tLE7aT1.png)
+
 - Easy configuration
 - No mysql database needed
 - Multiple types of configuration based on needs
 - Password protected area
 - Simple Server Start (via SSH)
 - Simple Server Stop (via RCON)
+- Restart / Next gamemode (via RCON)
 - Possibility to send global message to ingame players (via RCON)
 - Direct access to server_logs.txt and quick reset (via SSH)
 - Advanced information panel about the server
@@ -18,68 +21,12 @@ You can easily start & stop your server, once configured, and you can view serve
 - Bootstrap 4.0 coding and font-awesome icons
 
 
-## Requirements
+## Installation & Configuration
 
-1. Web server with PHP 7.0+ (it should work fine in PHP 5 and in earlier versions)
-2. **[Recommended]** SA-MP server on Ubuntu or Debian
-3. **[Recommended]** RCON password of the server
-4. **[Recommended]** SSH access to samp-server directory with granted privileges 
-
-
-## Installation
-
-The installation process is pretty easy: you need to edit the file ```includes/configuration.php``` with the requested field. In order to make everything usable, you must have satisfy all the recommended requirements described above. Anyway, there are various modes to use this console.
-
-Modes | Description | Requirements
----   | ---         | ---
-**Open** | This mode is used to display only the server information and player's list. Guests are able to see everything. | (1)
-**Limited** | In this mode, you need a password to access the area and you can only view server information and player's list, once logged-in. | (1)
-**Only RCON** | Like the limited mode, but with the possibility to kick and ban players, stop server and send global messages. | (1) (3)
-**Only SSH** | Like the limited mode, with the possibility to start the server, view and reset server_logs. | (1) (2) (4)
-**Complete** | All features available. | (1) (2) (3) (4)
-
-
-## Configuration File
-
-The configuration file is very simple to change. Just read this chapter to understand the function of each parameter.
-
-
-There are four main flags where ```enabled = 1``` and ```disabled = 1```. 
-
-- **ShowRCON** is a flag used to show the RCON password of the sa-mp server in the information area.
-	   	
-- **EnableRCON** activates the following features:
-	- Kick / Ban players
-	- Message
-	- Stop server
- 		- *[Requirement] YOU NEED THE RCON SERVER PASSWORD*		
-	 
-
-- **EnableSSH** activates the following features:
- 	- View / Reset server logs
-	- Start server
-		- *[Requirement] YOU NEED SSH ACCESS WITH SA-MP FOLDER PERMISSIONS*		
-
-- **EnableSRCPassword** is used to enable / disable password protected area for this console.
-
-> **[IMPORTANT]** It is strongly recommended to disable **EnableSRCPassword** __only__ if BOTH **EnableSSH** and **EnableRCON** are __disabled__, since the entire console would be visible to guests.
-
----
-
-Then, there also seven more fields used to define core parameters:
-
-- **SRC_PASSWORD** (Server Remote Console Password) is the password used for the protected area.
-- **IP_SERVER** is the IP of the target server.
-- **PORT_SERVER** is the port of the target server (default sa-mp port: 7777).
-- **RCON_PASSWORD** is the RCON password used in the target server.
-- **SERVER_SSH_USER** and **SERVER_SSH_PSW** are the user credentials to access via SSH the sa-mp server folder.
-- **SERVER_SSH_PATH** is the path of the sa-mp installation in the server. 
-
-> To localize the server Path, login with your SSH user credentials and move with ```cd``` through folders till you find the samp03 (or similar) folder. Do not forget to add a slash ( / ) at the end. 
-
-> User credentials must have permissions to start the server and open (```cat```) / remove (```rm```) files. 
-
-> **Do not use ROOT credentials**.
+Please, use the wiki to install and configure the remote console. 
+* [Requirements](https://github.com/Maxelweb/ServerRemoteConsoleSAMP/wiki/Requirements)
+* [Installation and Modes](https://github.com/Maxelweb/ServerRemoteConsoleSAMP/wiki/Installation-&-Modes)
+* [Configuration File](https://github.com/Maxelweb/ServerRemoteConsoleSAMP/wiki/Edit-Configuration-File)
 
 
 ## Credits
