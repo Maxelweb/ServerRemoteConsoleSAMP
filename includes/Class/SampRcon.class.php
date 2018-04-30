@@ -11,6 +11,7 @@
 // Creative Commons Attribution-NoDerivs 3.0 Unported License
 // http://creativecommons.org/licenses/by-nd/3.0/
 // Credits to Westie for the original PHP SA-MP API and inspiration for this API.
+// THREAD: http://forum.sa-mp.com/showthread.php?t=355574
 * *****************************************************************/
 
 class SampRcon {

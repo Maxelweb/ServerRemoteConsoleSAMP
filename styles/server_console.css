@@ -1,10 +1,13 @@
 
 /*
-	
-	SERVER REMOTE CONSOLE
-	CSS stylesheet
-	developed by Maxel (marianosciacco.it)
-*/
+ *
+ *  SERVER REMOTE CONSOLE
+ *  CSS - Style fixes based on Bootstrap 4
+ *  
+ *  Developed by Maxel (marianosciacco.it)
+ *  Github - src.debug.ovh
+ *
+ */
 
 
 body{ 
@@ -21,6 +24,7 @@ body{
 	background-color: #FFF; 
 	padding: 20px; 
 } 
+
 a { 
 	color: #444; 
 	text-decoration: none; 
@@ -31,37 +35,53 @@ a:hover{
 } 
 
 .logo{
-	max-width: 240px;
+	max-width: 100%;
 }
 
-/*
-
-td,th{ 
-	border-bottom: 1px solid #CCC; 
-	padding: 4px 6px; 
-} 
-
-tr:nth-child(odd){ 
-	background-color: #F1F1F1; 
-} 
-
-
-
-table{
-	border-collapse: collapse; 
-} 
-
-
-th{
-	background-color: #999; 
-	color: white; 
-	text-align: left; 
-	text-shadow: 1px 1px 1px #000;
+.progress-bar{
+	border-right: 1px solid #FFF;
+	cursor: pointer;
 }
 
-*/
+.header{
+
+}
+
+.header h1{
+	margin: 10px auto;
+}
+
+.header a{
+	color: #0f545f;
+}
+
+.header a:hover{
+	text-decoration: none;
+	color: #c27634;
+}
+
+footer {
+	margin-top: 15px;
+	margin-bottom: 10px;
+	border-top: 1px solid #E8E8E8;
+	padding: 10px 0 0;
+	text-align: right;
+}
+
+.progress-bar:hover{
+	background-color: #CCC !important;
+}
 
 .btn{
 	margin-top:  2px;
 	margin-bottom: 2px;
+}
+
+.PlayersList {
+	max-height: 244px; 
+	overflow-y: auto;
+}
+
+hr.lesshigh{
+	margin-top: 0;
 }

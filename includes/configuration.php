@@ -1,61 +1,35 @@
 <?php
 
-	/*
-	 * This is the configuration file. 
-	 * Make sure to read everything before make any changes.
-	 * 
-	 * SERVER REMOTE CONSOLE 
-	 * ------------------------------------------------
-	 *  	
-	 *	EnableRCON activates the following features:
-	 		- Kick / Ban players
-	 		- Message
-	 		- Stop server
-	 *
-	 *  Requirement: YOU NEED THE RCON SERVER PASSWORD TO ENABLE THIS FEATURE	
-	 *	
-	 *  ---------------------------------
-	 *
-	 *	EnableSSH activates the following features:
-	 		- view / reset server logs
-			- Start server
-	 *
-	 *  Requirement: YOU NEED SSH ACCESS WITH SA-MP FOLDER PERMISSIONS TO ENABLE THIS FEATURE		
-	 *
-	 *  ---------------------------------
-	 *
-	 *  EnableSRCPassword is used to enable / disable password protected area to this console.
-	   		[IMPORTANT] 
-	   			It is strongly recommended to change it only if BOTH EnableSSH and EnableRCON are disabled, because the entire console would be visible to guests.
-	 *
-	 *
-	 *  ---------------------------------
-	*/
+/*
+ *	DO NOT CHANGE!
+ *  ---------------------------------------
+ *
+ *  SERVER REMOTE CONSOLE
+ *  Include - Functions Processing
+ *  
+ *  Developed by Maxel (marianosciacco.it)
+ *  Github - src.debug.ovh
+ *
+ * 	---------------------------------
+ *	This is not the configuration file.
+ *  To restart the installation REMOVE installed.lock FROM root folder.
+ *  To change MANUALLY some parameters, you have to edit parameters.config.php and modes.config.php in < Config/ > folder
+ *  ---------------------------------
+*/
 
-
-	$CONFIG = 	array  // Change this section with [0 / 1]
-				(
-						"ShowRCON" 			=> 1 , // (Show / hide) RCON password from infomation bar at the top
-						"EnableRCON" 		=> 1 , 
-						"EnableSSH" 		=> 1 , 	 
-						"EnableSRCPassword" => 1 	// READ ABOVE BEFORE CHANGING THIS!
-				);
-
-
-	
-
-	define(SRC_PASSWORD, "getmesomecoffee"); // Insert ServerConsole password
-	define(IP_SERVER, "127.0.0.1"); // Insert server IP
-	define(PORT_SERVER, "7777"); // Insert server port (DEFAULT: 7777)
-	define(RCON_SERVER, "changeme"); // Insert RCON password
-
-	define(SERVER_SSH_USER, "user"); // Insert your SSH user to login your VPS / Dedicated server
-	define(SERVER_SSH_PSW, "sshpassword"); // Insert your SSH password to login your VPS / Dedicated server
-	define(SERVER_SSH_PATH, "path/to/samp03/"); // Insert path to samp-server file with final "/"
-
-
-
-
-
+	if(file_exists("emergency.lock"))
+	{
+		header("location: locked.php");
+	}
+	elseif(file_exists("installed.lock"))
+	{
+		require_once("Config/parameters.config.php");
+		require_once("Config/modes.config.php");
+		require_once("Config/guestpage.config.php");
+	}
+	else
+	{
+		header("location: install.php");
+	}
 ?>
 

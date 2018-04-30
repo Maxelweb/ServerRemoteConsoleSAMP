@@ -1,12 +1,15 @@
 <?php
 
 /*
-	DO NOT CHANGE!
-	---------------------
-	SERVER REMOTE CONSOLE
-	Login controller file
-	developed by Maxel (marianosciacco.it)
-*/
+ *
+ *  SERVER REMOTE CONSOLE
+ *  Controller - Login
+ *  
+ *  Developed by Maxel (marianosciacco.it)
+ *  Github - src.debug.ovh
+ *
+ */
+
 
 	if($_SESSION['src_login_wait'] > time())
 		No("Your access has been blocked. You must wait 5 minutes to continue.");
@@ -19,7 +22,7 @@
 			$_SESSION['src_logged'] = 1; 
 			unset($_SESSION['src_login_tried']);
 			unset($_SESSION['src_login_wait']);
-			location("index.php");
+			location("index.php?updates");
 		}
 		else
 		{

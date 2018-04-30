@@ -1,12 +1,14 @@
 <?php
 
 /*
-	DO NOT CHANGE!
-	---------------------
-	SERVER REMOTE CONSOLE
-	Updates checker
-	developed by Maxel (marianosciacco.it)
-*/
+ *
+ *  SERVER REMOTE CONSOLE
+ *  Controller - Online update checker
+ *  
+ *  Developed by Maxel (marianosciacco.it)
+ *  Github - src.debug.ovh
+ *
+ */
 
 	ini_set("allow_url_fopen", 1);
 	$json = file_get_contents('http://src.debug.ovh/updates.php');

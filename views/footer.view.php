@@ -1,11 +1,22 @@
-    <br>
-    <p align="right">
+<?php
+/*
+ *
+ *  SERVER REMOTE CONSOLE
+ *  View - Footer (general)
+ *  
+ *  Developed by Maxel (marianosciacco.it)
+ *  Github - src.debug.ovh
+ *
+ */
+?>
+
+    <footer>
         <small>
-        	Developed by <b><a href="http://marianosciacco.it">Maxel</a></b> - <a href="<?=$GithubRepo;?>">Server Remote Console <i class="fab fa-github"></i> </a>
+        	Developed by <b><a href="https://marianosciacco.it">Maxel</a></b> - <a href="<?=$GithubRepo;?>">Server Remote Console <i class="fab fa-github"></i> </a>
         	<br>
         	<i><span class='badge badge-secondary'>Version <?=$version;?> <i class="fa fa-coffee"></i></span></i> <a href='?updates' class="badge badge-info">Check for updates</a>
         </small>
-    </p>
+    </footer>
     </div>                   
 </div>
     

@@ -1,15 +1,14 @@
 <?php
 
 /*
-	SERVER REMOTE CONSOLE
-	Developed by Maxel (marianosciacco.it)
-
-	Useful Libs:
-
-		SA_MP API 		http://forum.sa-mp.com/showthread.php?t=355574
-
-*/
-
+ *
+ *  SERVER REMOTE CONSOLE
+ *  Model - Index of protected area
+ *  
+ *  Developed by Maxel (marianosciacco.it)
+ *  Github - src.debug.ovh
+ *
+ */
 
 
 /*
@@ -19,8 +18,9 @@
 	error_reporting(E_ERROR);
 	set_include_path(get_include_path() . PATH_SEPARATOR . 'resources'); 
 	include('Net/SSH2.php');
-	require("resources/Class/SampQuery.class.php");
-	require("resources/Class/SampRcon.class.php");
+	require("includes/Class/SampQuery.class.php");
+	require("includes/Class/SampRcon.class.php");
+	require("includes/Class/Bulletins.class.php");
 
 /*
  *	Main configurations and functions files
@@ -39,19 +39,17 @@
  *
  */
 
-
 	require("views/header.view.php");
 	
 
-	if(!isset($_SESSION['src_logged']) && $CONFIG['EnableSRCPassword'])
+	if(!isset($_SESSION['src_logged']))
 	{
-		if($a == "login") 
-			require("controllers/login.ctrl.php");
-
-		require("views/login.view.php");
-
+		if($config->EnableGuestPage) 
+			location("status.php");
+		else 
+			location("login.php");
 	}
-	elseif((isset($_SESSION['src_logged']) && $CONFIG['EnableSRCPassword']) || !$CONFIG['EnableSRCPassword']) 
+	else
 	{
 
 		if(isset($_GET['updates']))
@@ -59,17 +57,36 @@
 			require("controllers/updates.ctrl.php");
 		}
 
-		$server = new SampQuery(IP_SERVER, PORT_SERVER);
-	    $status = ($server->connect()) ? 1 : 0;
-	    $statusMessage = $status ? Ok("Online", 1) : No("Offline", 1);
-	    
 
-	    require("views/tools.view.php");
+		if(isset($_GET['settings']))
+		{
+			if($a != "")
+				require("controllers/settings.ctrl.php");
+			require("views/settings.view.php");
+		}
+		elseif(isset($_GET['bulletins']))
+		{
+			
+			$f = !isset($_GET['file']) ? "" : $_GET['file'];
+			$ord = isset($_GET['ord']) && $_GET['ord']<4 ? $_GET['ord'] : 0;
 
-	    if($a != "" || (!$CONFIG['EnableSRCPassword'] && !$CONFIG['EnableSSH'] && !$CONFIG['EnableRCON']))
-	    {
-	    	require("controllers/actions-logged.ctrl.php");
-	    }
+			if($a != "")
+				require("controllers/bulletins.ctrl.php");
+			require("views/bulletins.view.php");
+		}
+		else
+		{
+			$server = new SampQuery(IP_SERVER, PORT_SERVER);
+		    $status = ($server->connect()) ? 1 : 0;
+		    $statusMessage = $status ? Ok("Online", 1, 1) : No("Offline", 1, 1);
+		    
+		    require("views/tools.view.php");
+
+		    if(!empty($a))
+	    	{
+	    		require("controllers/server-actions.ctrl.php");
+	    	}
+		}
 	}
 
 

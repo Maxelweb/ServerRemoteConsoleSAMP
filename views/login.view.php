@@ -1,3 +1,15 @@
+<?php
+/*
+ *
+ *  SERVER REMOTE CONSOLE
+ *  View - Login page
+ *  
+ *  Developed by Maxel (marianosciacco.it)
+ *  Github - src.debug.ovh
+ *
+ */
+?>
+
 
 <h1>Protected Area</h1>
 <br><br>
