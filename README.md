@@ -2,7 +2,7 @@
 
 [Go to the Official SA-MP thread of this project](http://forum.sa-mp.com/showthread.php?t=652832)
 
-![logo](https://i.imgur.com/gfzshsv.png) 
+![logo](https://i.imgur.com/gfzshsv.png) **Current Release:** 1.1 (stable)
 
 This web application written in PHP is a simple remote console to manage players and server activities. You can easily start & stop your server, once configured, and you can view server logs, server bans and server configuration as well as server advanced informations and player's list. Moreover, it is possible to kick or ban players directely from the web, send several rcon commands and enable a guest page with basic server informations, players' list and custom bulletins to inform your players about the server status.
 Finally, the installation is fully based on a Web Installer and it is easy to configure.
