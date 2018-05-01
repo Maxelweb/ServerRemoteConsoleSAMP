@@ -10,7 +10,7 @@ This web application written in PHP is a simple remote console to manage players
 Finally, the installation is fully based on a Web Installer and it is easy to configure.
 
 
-![New Version 1.1](https://i.imgur.com/MISFJuR.png)
+![New Version 1.1](https://i.imgur.com/IrFZCuH.png)
 
 
 ## Features
