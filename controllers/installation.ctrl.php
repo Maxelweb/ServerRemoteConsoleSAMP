@@ -37,20 +37,39 @@
 	else
 	{
 
+		echo "Starting configuration, please wait...<br>";
+
+		if($ercon)
+		{
+			$query = new SampRcon($ips, $port, $rcon); 
+				if(!$query->connect()) 
+					die(No("Connection error. Retry.",1));
+				
+				if(count($query->getCommandList()) <= 1) // if invalid, returns one element with error message
+					exit(No("RCON password - The RCON is invalid, please insert a valid RCON to continue."));
+				else
+					Ok("RCON password - Accepted.<br>");
+		}
+
 		if($essh)
 		{
 			$ssh = new Net_SSH2($ips);
 				if (!$ssh->login($user, $pass)) 
-	    			exit(No('<b>SSH access</b> - Login incorrect. Please, retry.'));
+	    			exit(No('SSH access - Login incorrect. Please, retry.'));
 	    		else
-	    			Ok('<b>SSH access</b> - Done. <br>');
+	    		{
+	    			if(trim($ssh->exec('find '.$path.'samp03svr')) != $path."samp03svr")
+	    				exit(No("SSH access - Login correct, but <u>invalid server path</u>. The path should contains the <code>samp03svr</code> execution file as well as the basic SA-MP files and folders."));
+	    			else
+	    				Ok('SSH access - Done. <br>');
+	    		}
 		}
+
+
 
 		$rcon = str_replace('"', '\"', $rcon);
 		$pass = str_replace('"', '\"', $pass);
 
-		echo "Starting configuration, please wait...<br>";
-		sleep(1);
 
 		$configFile = fopen("./includes/Config/parameters.config.php", "w+") or die($errorPermissions);
 
@@ -130,7 +149,7 @@ $gpage =  (object) array
 		{
 			$lock = fopen("installed.lock", "x");
 			if($lock) Ok("Configuration completed! Wait..");
-			else die($errorPermissions."3");
+			else die($errorPermissions);
 			sleep(1);
 			location("install.php");
 		}

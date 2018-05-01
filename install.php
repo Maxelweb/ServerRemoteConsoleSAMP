@@ -20,6 +20,7 @@
 	error_reporting(E_ERROR);
 	set_include_path(get_include_path() . PATH_SEPARATOR . 'resources'); 
 	include('Net/SSH2.php');	
+	require("includes/Class/SampRcon.class.php");
 	require('includes/environment.php');
 	require('includes/functions.php');
 
