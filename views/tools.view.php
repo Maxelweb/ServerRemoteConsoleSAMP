@@ -115,7 +115,7 @@ $button = !$status ?
 				<option value="12">(Set) Mapname [text]</option>	
 			</select>
 		</div>
-		<input type='text' class='form-control' placeholder='Write a message to send to everyone in the server' name='mex' style='width: 82%; margin-right: 15px;'>
+		<input type='text' class='form-control' placeholder='Enter the second part of the rcon command, like the message or the playerid' name='mex' style='width: 82%; margin-right: 15px;'>
 		<button type='submit' class='btn btn-info btn-xs' name='smex' value="1">Send command <i class='fa fa-pen-square'></i> </button>
 	</form>  
 
