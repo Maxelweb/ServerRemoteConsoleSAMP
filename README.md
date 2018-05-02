@@ -57,5 +57,5 @@ The server remote console for SA-MP has been developed and coded by **Maxel** (m
 The actual version is **1.1**, released __01/05_2018__.
 This project has started in __19/04/2018__ and it is __still supported__. 
 
-Special thanks to __StatusRed__ aka __Edward McKnight__ for his plugin **SA-MP Query and RCON API for PHP** which is used in this project, as well as __Wouter van Eekelen__ and __Peter Beverloo__ for **SA-MP Query server (Version 0.3)** used for the guest page.  
+Special thanks to __StatusRed__ aka __Edward McKnight__ for his plugin **SA-MP Query and RCON API for PHP** (originally developed by __Westie__) which is used in this project, as well as __Wouter van Eekelen__ and __Peter Beverloo__ for **SA-MP Query server (Version 0.3)** used for the guest page.  
 Bootstrap 4 and Font-Awesome.com has been also used to make the HTML template and style of this website.
