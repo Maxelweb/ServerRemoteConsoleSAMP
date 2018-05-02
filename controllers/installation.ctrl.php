@@ -46,7 +46,7 @@
 					die(No("Connection error. Retry.",1));
 				
 				if(count($query->getCommandList()) <= 1) // if invalid, returns one element with error message
-					exit(No("RCON password - The RCON is invalid, please insert a valid RCON to continue."));
+					exit(No("RCON password - The RCON is invalid, please insert a valid RCON to continue. Make sure there's no <code>rcon 0</code> in your <code>server.cfg</code>. Otherwise, change it to <code>rcon 1</code> to enable remote rcon commands."));
 				else
 					Ok("RCON password - Accepted.<br>");
 		}
