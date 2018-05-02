@@ -71,7 +71,7 @@ $(function () {
       <option <?=$id==3?"selected":"";?> value="3">30 days ago</option>
       <option <?=$id==4?"selected":"";?> value="4">All older bulletins</option>
     </select>
-    <?php if($id==4) $Bulletins->List(); else { ?>
+    <?php if($id==4) $Bulletins->ListNormal(); else { ?>
     <?=$Bulletins->ShowStatusBar($Days);?>
 	</div>
 </div>

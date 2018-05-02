@@ -1,13 +1,14 @@
 <?php
 
-
 /*
-    SERVER REMOTE CONSOLE
-    Bulletins & Status Classes
-    Developed by Maxel (marianosciacco.it)
-*/
-
-
+ *
+ *  SERVER REMOTE CONSOLE
+ *  Class - Bulletins and Status (used to list bulletins)
+ *  
+ *  Developed by Maxel (marianosciacco.it)
+ *  Github - src.debug.ovh
+ *
+ */
 
 
 class Bulletin {
@@ -136,7 +137,7 @@ class Status
         }
     }
 
-    public function List($maxnum=0)
+    public function ListNormal($maxnum=0)
     {
         echo "<ul class='list-group'>";
         arsort($this->bulletins);
