@@ -47,14 +47,15 @@ $button = !$status ?
 						</div>
 					</li>
 					<?php } ?>
-					<?php if($config->EnableRCON) {?>
+					<?php if($config->EnableRCON || $config->EnableSSH) {?>
 					<li class="nav-item dropdown">
 						<a class="dropdown-toggle nav-link" href="#" role="button" id="ddActions"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						   <i class='fa fa-location-arrow'></i> Server Actions
 						</a>
 						<div class="dropdown-menu" aria-labelledby="ddActions">
-							<a href="?a=control&gmx" class="dropdown-item text-danger"><i class='fa fa-redo-alt'></i> Restart / Next Gamemode</a>
 							<?php if($config->EnableSSH) {?>
+							<a href="?a=control&gmx" class="dropdown-item text-danger"><i class='fa fa-redo-alt'></i> Restart / Next Gamemode</a>
+							<?php } if($config->EnableSSH) {?>
 							<a href="?a=control&hardstop" class="dropdown-item text-danger"><i class='fa fa-stop'></i> Hard Server Stop (Kill Process)</a>
 							<?php } ?>
 						</div>
@@ -94,7 +95,7 @@ $button = !$status ?
 		</table>
 	</div>
 
-	<?php if($config->EnableSSH) {?>
+	<?php if($config->EnableRCON) {?>
 	<form method='POST' action='?a=rcon' class='form-inline mt-3'>
 		<div class="input-group my-3">
 			<div class="input-group-prepend">
