@@ -53,7 +53,7 @@ $button = !$status ?
 						   <i class='fa fa-location-arrow'></i> Server Actions
 						</a>
 						<div class="dropdown-menu" aria-labelledby="ddActions">
-							<?php if($config->EnableSSH) {?>
+							<?php if($config->EnableRCON) {?>
 							<a href="?a=control&gmx" class="dropdown-item text-danger"><i class='fa fa-redo-alt'></i> Restart / Next Gamemode</a>
 							<?php } if($config->EnableSSH) {?>
 							<a href="?a=control&hardstop" class="dropdown-item text-danger"><i class='fa fa-stop'></i> Hard Server Stop (Kill Process)</a>

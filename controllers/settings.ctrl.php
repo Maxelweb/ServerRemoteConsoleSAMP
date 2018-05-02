@@ -64,7 +64,7 @@ elseif($a == "edit-gpage" && $config->EnableGuestPage)
 	$gusers = (int)$_POST['gusers'];
 	$gstatus = (int)$_POST['gstatus'];
 
-	if(!Regex($gname) || strlen($gname) > 24)
+	if(!Regex($gname) || strlen($gname) > 32)
 		No("Only letters, numbers, spaces and underscores are allowed. Requested length: 1-24 characters.");
 	else
 	{
