@@ -2,7 +2,12 @@
 
 [Go to the Official SA-MP thread of this project](http://forum.sa-mp.com/showthread.php?t=652832)
 
+
+> **Recent errors** have been __fixed__, please re-download the latest release.
+
+
 ![logo](https://i.imgur.com/gfzshsv.png) 
+
 
 **Current Release:** 1.1 (stable)
 
