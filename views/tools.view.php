@@ -14,11 +14,22 @@
 
 $button = !$status ? 
 			(($config->EnableSSH) ? 
-				"<button type='submit' name='start' value=1 class='btn btn-sm btn-success'><i class='fa fa-play'></i> Start Server</button>" : "")
+				'<div class="dropdown">
+				  <button type="button" class="btn btn-sm btn-success dropdown-toggle" id="ServerStart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    <i class="fa fa-play"></i> Start Server</button>
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="ServerStart">
+				  	<h6 class="dropdown-header">Choose an action</h6>
+				    <button class="dropdown-item" type="submit" name="start" value="1">Normal start</button>
+				    <button class="dropdown-item text-success" type="submit" name="forcestart" value="1">Force start</button>
+				  </div>
+				</div>' : "")
 	      : (($config->EnableRCON) ? 
 	    		"<button type='submit' name='stop' value=1 class='btn btn-sm btn-danger'><i class='fa fa-stop'></i> Stop Server</button>" : "");  
 
 ?>
+
+
 
 <div class="jumbotron p-4">
 
@@ -56,7 +67,7 @@ $button = !$status ?
 							<?php if($config->EnableRCON) {?>
 							<a href="?a=control&gmx" class="dropdown-item text-danger"><i class='fa fa-redo-alt'></i> Restart / Next Gamemode</a>
 							<?php } if($config->EnableSSH) {?>
-							<a href="?a=control&hardstop" class="dropdown-item text-danger"><i class='fa fa-stop'></i> Hard Server Stop (Kill Process)</a>
+							<a href="?a=control&hardstop" onclick="return confirm('You\'re gonna kill all current sa-mp server running in your server. Proceed?')" class="dropdown-item text-danger"><i class='fa fa-stop'></i> Hard Server Stop (Kill Process)</a>
 							<?php } ?>
 						</div>
 					</li>

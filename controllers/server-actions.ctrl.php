@@ -18,14 +18,14 @@
 		elseif($a == "control")
 		{
 
-			if(isset($_POST['start']) && $config->EnableSSH)
+			if((isset($_POST['start']) || isset($_POST['forcestart'])) && $config->EnableSSH)
 			{
 				$ssh = new Net_SSH2(IP_SERVER);
 				if (!$ssh->login(SERVER_SSH_USER, SERVER_SSH_PSW)) 
 	    			exit(No('Host access refused!'));
 	    		$response = $ssh->exec('pgrep samp03svr');
-	    		if($response) No("The server is already running! Please, if you notice any small issue consider to <u>Hard Stop the SA-MP server</u>, by killing all SA-MP processes.");
-	    		else
+	    		if($response && $_POST['start']) No("The server is already running! You can use <u>Force start</u>, if you're running multiple server. Please, if you notice any small issue consider to <u>Hard Stop the SA-MP server</u>, by killing all SA-MP processes.");
+	    		elseif((!$response && $_POST['start']) || $_POST['forcestart'])
 	    		{
 					$ssh->exec('cd '.SERVER_SSH_PATH.'; nohup ./samp03svr &');  
 					Ok("Server started! <a href='?' class='btn btn-sm btn-success'>Reload the page</a>");
