@@ -18,7 +18,7 @@
 
 <form action='?a=do-magic-things' method='post' class="form-control">
 
-	<h3 class="pt-4 pb-2"><i class="fa fa-thumbtack"></i> Main configuration <span class="badge badge-danger small">REQUIRED</span></h3>
+	<h3 class="pt-4 pb-2"><i class="fa fa-thumbtack"></i> Main configuration <span class="badge badge-success small">REQUIRED</span></h3>
 	<input type='password' class='form-control' required placeholder='Choose a password' name='srcp'>
 	<p class="text-muted small mt-2 mb-4">Choose a Password to access the SRC. <b><code>Letters, numbers, dashes and underscores only; [4-32] characters length.</code></b></p>
 	<input type='text' value="<?=$ips;?>" class='form-control' required placeholder='Server IP Address (without port)' name='ips'>
@@ -41,6 +41,9 @@
 	<input type='password' class='form-control' placeholder='SSH Password' name='pass' id="sshPass" disabled /><br>
 	<input type='text' class='form-control' value="<?=$path;?>" placeholder='SSH Path/to/sa-mp/server' name='path' id="sshPath" disabled />
 	<p class="text-muted small my-2"><b>Warning</b>, the folder MUST end with <code>/</code>. For example: <code>samp03/</code></p>
+	<hr>
+	<input type='checkbox' name='finstall' class="custom-checkbox" id="forceInstall" value="1"> Force installation <span class="badge badge-danger">Not Recommended</span> 
+	<p class="text-muted small my-2">Use this option to bypass SSH and RCON controls. If credentials are wrong, some features won't work. </p>
 	<br>
 	<button class='btn btn-primary' type='submit'>Submit the form <span class="fa fa-sign-in-alt"></span></button>
 </form>

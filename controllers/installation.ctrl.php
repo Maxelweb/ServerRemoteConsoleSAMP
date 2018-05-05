@@ -18,6 +18,7 @@
 	$pass = $_POST['pass'];
 	$path = $_POST['path'];
 
+	$finstall = $_POST['finstall'];
 
 	$ercon = (int)$_POST['ercon'];
 	$essh = (int)$_POST['essh'];
@@ -39,32 +40,36 @@
 
 		echo "Starting configuration, please wait...<br>";
 
-		if($ercon)
+		if($finstall)
+			No("[FORCE INSTALLATION] RCON and SSH controls have been skipped!<br>");
+		else
 		{
-			$query = new SampRcon($ips, $port, $rcon); 
-				if(!$query->connect()) 
-					die(No("Connection error. Retry.",1));
-				
-				if(count($query->getCommandList()) <= 1) // if invalid, returns one element with error message
-					exit(No("RCON password - The RCON is invalid, please insert a valid RCON to continue. Make sure there's no <code>rcon 0</code> in your <code>server.cfg</code>. Otherwise, change it to <code>rcon 1</code> to enable remote rcon commands."));
-				else
-					Ok("RCON password - Accepted.<br>");
-		}
+			if($ercon)
+			{
+				$query = new SampRcon($ips, $port, $rcon); 
+					if(!$query->connect()) 
+						die(No("Connection error. Retry.",1));
+					
+					if(count($query->getCommandList()) <= 1) // if invalid, returns one element with error message
+						exit(No("RCON password - The RCON is invalid, please insert a valid RCON to continue. Make sure there's no <code>rcon 0</code> in your <code>server.cfg</code>. Otherwise, change it to <code>rcon 1</code> to enable remote rcon commands."));
+					else
+						Ok("RCON password - Accepted.<br>");
+			}
 
-		if($essh)
-		{
-			$ssh = new Net_SSH2($ips);
-				if (!$ssh->login($user, $pass)) 
-	    			exit(No('SSH access - Login incorrect. Please, retry.'));
-	    		else
-	    		{
-	    			if(trim($ssh->exec('find '.$path.'samp03svr')) != $path."samp03svr")
-	    				exit(No("SSH access - Login correct, but <u>invalid server path</u>. The path should contains the <code>samp03svr</code> execution file as well as the basic SA-MP files and folders."));
-	    			else
-	    				Ok('SSH access - Done. <br>');
-	    		}
+			if($essh)
+			{
+				$ssh = new Net_SSH2($ips);
+					if (!$ssh->login($user, $pass)) 
+		    			exit(No('SSH access - Login incorrect. Please, retry.'));
+		    		else
+		    		{
+		    			if(trim($ssh->exec('find '.$path.'samp03svr')) != $path."samp03svr")
+		    				exit(No("SSH access - Login correct, but <u>invalid server path</u>. The path should contains the <code>samp03svr</code> execution file as well as the basic SA-MP files and folders."));
+		    			else
+		    				Ok('SSH access - Done. <br>');
+		    		}
+			}
 		}
-
 
 
 		$rcon = str_replace('"', '\"', $rcon);
@@ -150,7 +155,7 @@ $gpage =  (object) array
 			$lock = fopen("installed.lock", "x");
 			if($lock) Ok("Configuration completed! Wait..");
 			else die($errorPermissions);
-			sleep(1);
+			sleep(3);
 			location("install.php");
 		}
 		else
