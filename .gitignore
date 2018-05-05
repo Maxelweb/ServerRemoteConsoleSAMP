@@ -1,0 +1,5 @@
+
+includes/Config/parameters.config.php
+includes/Config/modes.config.php
+includes/Config/guestpage.config.php
+installed.lock
