@@ -26,7 +26,7 @@ $(function () {
 <?php if($sStatus) { ?>
     <div class="card my-3">
       <div class="card-body">
-        <h4 class="card-title"><a href="samp://<?=IP_SERVER;?>"><?=$sHostname;?></a></h4>
+        <h4 class="card-title"><a href="samp://<?=IP_SERVER.":".PORT_SERVER;?>"><?=$sHostname;?></a></h4>
         <a href="http://<?=$sUrl;?>" class="h5"><i class="fa fa-link small"></i> <?=strtolower($sUrl);?></a>
         &nbsp; <code><?=IP_SERVER.":".PORT_SERVER;?></code>
         <p class="card-text my-2">
