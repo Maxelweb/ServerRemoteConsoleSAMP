@@ -10,6 +10,7 @@
 
 
 **Current Release:** 1.1.1 (stable)
+
 **Release date:** May 6, 2018
 
 
