@@ -3,13 +3,13 @@
 [Go to the Official SA-MP thread of this project](http://forum.sa-mp.com/showthread.php?t=652832)
 
 
-> **Recent errors** have been __fixed__, please re-download the latest release.
+> **Version 1.1.1 has been released!** Checkout the changelog in the [Releases](releases) section.
 
 
 ![logo](https://i.imgur.com/gfzshsv.png) 
 
 
-**Current Release:** 1.1 (stable)
+**Current Release:** 1.1.1 (stable)
 
 This web application written in PHP is a simple remote console to manage players and server activities. You can easily start & stop your server, once configured, and you can view server logs, server bans and server configuration as well as server advanced informations and player's list. Moreover, it is possible to kick or ban players directely from the web, send several rcon commands and enable a guest page with basic server informations, players' list and custom bulletins to inform your players about the server status.
 Finally, the installation is fully based on a Web Installer and it is easy to configure.
@@ -59,7 +59,7 @@ Please, use the wiki to install and configure the remote console.
 ## Credits
 
 The server remote console for SA-MP has been developed and coded by **Maxel** (marianosciacco.it)
-The actual version is **1.1**, released __01/05_2018__.
+The current version is **1.1.1**, released in __06/05/2018__.
 This project has started in __19/04/2018__ and it is __still supported__. 
 
 Special thanks to __StatusRed__ aka __Edward McKnight__ for his plugin **SA-MP Query and RCON API for PHP** (originally developed by __Westie__) which is used in this project, as well as __Wouter van Eekelen__ and __Peter Beverloo__ for **SA-MP Query server (Version 0.3)** used for the guest page.  
