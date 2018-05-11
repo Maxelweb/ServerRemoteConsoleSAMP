@@ -1,3 +1,9 @@
+
+> ---
+> [May 12, 2018] **Future updates and releases will require some weeks to be developed, due to university commitments.**
+> ---
+
+
 # Server Remote Console (SA-MP)
 
 [Go to the Official SA-MP thread of this project](http://forum.sa-mp.com/showthread.php?t=652832)
